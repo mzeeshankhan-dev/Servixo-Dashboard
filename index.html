@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servixo Dashboard</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar" id="sidebar">
+
+      <div class="logo">
+        <div class="logo-circle"><img src="./images/logo.png" alt="logo"></div>
+
+        <div>
+          <h2>Servixo</h2>
+          <p>Admin Dashboard</p>
+        </div>
+      </div>
+
+
+      <ul class="nav-links">
+
+        <li class="active" data-page="dashboard-page">
+          <i class="fa-solid fa-house"></i>
+          Dashboard
+        </li>
+
+        <li data-page="analytics-page">
+          <i class="fa-solid fa-chart-simple"></i>
+          Analytics
+        </li>
+
+        <li data-page="bookings-page">
+          <i class="fa-solid fa-calendar-check"></i>
+          Bookings
+        </li>
+
+        <li data-page="customers-page">
+          <i class="fa-solid fa-users"></i>
+          Customers
+        </li>
+
+        <li data-page="services-page">
+          <i class="fa-solid fa-briefcase"></i>
+          Services
+        </li>
+
+        <li data-page="payments-page">
+          <i class="fa-solid fa-wallet"></i>
+          Payments
+        </li>
+
+        <li data-page="messages-page">
+          <i class="fa-regular fa-envelope"></i>
+          Messages
+
+          <span class="badge">5</span>
+        </li>
+
+        <li data-page="employees-page">
+          <i class="fa-solid fa-user-group"></i>
+          Employees
+        </li>
+
+        <li data-page="reviews-page">
+          <i class="fa-regular fa-star"></i>
+          Reviews
+        </li>
+
+        <li data-page="settings-page">
+          <i class="fa-solid fa-gear"></i>
+          Settings
+        </li>
+
+      </ul>
+
+      <div class="logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+      </div>
+
+    </aside>
+
+
+    <!--///////////  Main section  //////////-->
+
+    <main class="main-content">
+
+
+      <!-- Header -->
+
+      <header class="topbar">
+
+        <div class="left-header">
+
+          <i class="fa-solid fa-bars" id="menu-btn"></i>
+
+          <h1>Dashboard</h1>
+
+        </div>
+
+
+        <div class="search-box">
+
+          <input type="text" id="searchInput" placeholder="Search here..." />
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+        </div>
+
+
+        <div class="top-icons">
+
+          <button id="themeToggle">
+            <i class="fa-regular fa-sun"></i>
+          </button>
+
+
+          <div class="notification-wrapper">
+
+            <button id="notificationBtn">
+              <i class="fa-regular fa-bell"></i>
+              <span>3</span>
+            </button>
+
+
+            <div class="notification-dropdown" id="notificationDropdown">
+
+              <h4>Notifications</h4>
+
+              <div class="notification-item">
+                <p>New booking received</p>
+                <small>5 min ago</small>
+              </div>
+
+              <div class="notification-item">
+                <p>New customer registered</p>
+                <small>15 min ago</small>
+              </div>
+
+              <div class="notification-item">
+                <p>Payment received</p>
+                <small>1 hour ago</small>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <button>
+            <i class="fa-regular fa-envelope"></i>
+            <span>2</span>
+          </button>
+
+
+          <div class="profile">
+
+            <img src="https://i.pravatar.cc/100" alt="profile" />
+
+            <div>
+              <h4>Admin</h4>
+              <p>Super Admin</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!--/////////////  Dashboard Page  ////////-->
+
+      <section class="page active-page" id="dashboard-page">
+
+        <div class="welcome-section">
+
+          <div>
+            <h2>Welcome back, Admin! 👋</h2>
+            <p>Here's what's happening with your business today.</p>
+          </div>
+
+
+          <button class="date-btn">
+            <input type="date" value="2026-05-26" style="border: none; font-size: 1rem; outline: none;">
+          </button>
+
+        </div>
+
+
+        <!-- Cards -->
+
+        <div class="cards">
+
+          <div class="card">
+
+            <div class="card-icon blue">
+              <i class="fa-solid fa-users"></i>
+            </div>
+
+            <div>
+              <p>Total Customers</p>
+              <h3 class="counter" data-target="245678">0</h3>
+              <span>↑ 12.5%</span>
+            </div>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-icon green">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+
+            <div>
+              <p>Total Bookings</p>
+              <h3 class="counter" data-target="15890">0</h3>
+              <span>↑ 8.2%</span>
+            </div>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-icon orange">
+              <i class="fa-solid fa-dollar-sign"></i>
+            </div>
+
+            <div>
+              <p>Total Revenue</p>
+              <h3>$58,945</h3>
+              <span>↑ 15.6%</span>
+            </div>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="card-icon pink">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div>
+              <p>Completed Jobs</p>
+              <h3 class="counter" data-target="12456">0</h3>
+              <span>↑ 10.3%</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Charts -->
+
+        <div class="charts-grid">
+
+
+          <div class="chart-box large-chart">
+
+            <div class="chart-header">
+              <h3>Revenue Overview</h3>
+              <button>This Month</button>
+            </div>
+
+            <canvas id="lineChart"></canvas>
+
+          </div>
+
+
+          <div class="chart-box">
+
+            <h3>Bookings by Service</h3>
+
+            <canvas id="doughnutChart"></canvas>
+
+          </div>
+
+
+          <div class="notification-box">
+
+            <div class="box-header">
+              <h3>Recent Notifications</h3>
+              <i class="fa-solid fa-ellipsis"></i>
+            </div>
+
+
+            <div class="notify-item">
+              <div class="notify-circle green-bg">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+
+              <div>
+                <h4>New booking received</h4>
+                <p>#BK-12589</p>
+              </div>
+
+              <span>5 min ago</span>
+            </div>
+
+
+            <div class="notify-item">
+              <div class="notify-circle blue-bg">
+                <i class="fa-solid fa-user"></i>
+              </div>
+
+              <div>
+                <h4>New customer registered</h4>
+                <p>John Doe</p>
+              </div>
+
+              <span>15 min ago</span>
+            </div>
+
+
+            <div class="notify-item">
+              <div class="notify-circle orange-bg">
+                <i class="fa-solid fa-dollar-sign"></i>
+              </div>
+
+              <div>
+                <h4>Payment received</h4>
+                <p>$250 from Name Role
+                  Liam Carter</p>
+              </div>
+
+              <span>1 hour ago</span>
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+        <!-- Bottom -->
+
+        <div class="bottom-grid">
+
+
+          <div class="table-box">
+
+            <div class="box-header">
+              <h3>Recent Bookings</h3>
+            </div>
+
+
+            <table>
+
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Customer</th>
+                  <th>Service</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+
+              <tbody id="bookingTable">
+
+                <tr>
+                  <td>#BK-12589</td>
+                  <td>Lucas Miller</td>
+                  <td>Plumbing</td>
+                  <td>25 May 2025</td>
+                  <td>$120</td>
+                  <td><span class="status pending">Pending</span></td>
+                </tr>
+
+                <tr>
+                  <td>#BK-12588</td>
+                  <td>Sara Khan</td>
+                  <td>Cleaning</td>
+                  <td>25 May 2025</td>
+                  <td>$80</td>
+                  <td><span class="status confirmed">Confirmed</span></td>
+                </tr>
+
+                <tr>
+                  <td>#BK-12587</td>
+                  <td>Hassan Ahmed</td>
+                  <td>Electrical</td>
+                  <td>24 May 2025</td>
+                  <td>$150</td>
+                  <td><span class="status completed">Completed</span></td>
+                </tr>
+
+                <tr>
+                  <td>#BK-12586</td>
+                  <td>Noah Wilson</td>
+                  <td>Painting</td>
+                  <td>24 May 2025</td>
+                  <td>$200</td>
+                  <td><span class="status cancelled">Cancelled</span></td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+
+          <div class="employees-box">
+
+            <div class="box-header">
+              <h3>Top Employees</h3>
+              <i class="fa-solid fa-ellipsis"></i>
+            </div>
+
+
+            <div class="employee">
+              <img src="https://i.pravatar.cc/100?img=1" alt="">
+              <div>
+                <h4>Ahmad Khan</h4>
+                <p>Plumber</p>
+              </div>
+              <span>⭐ 4.9</span>
+            </div>
+
+
+            <div class="employee">
+              <img src="https://i.pravatar.cc/100?img=11" alt="">
+              <div>
+                <h4>Usman Ali</h4>
+                <p>Electrician</p>
+              </div>
+              <span>⭐ 4.8</span>
+            </div>
+
+
+            <div class="employee">
+              <img src="https://i.pravatar.cc/100?img=3" alt="">
+              <div>
+                <h4>Noah Wilson</h4>
+                <p>Cleaner</p>
+              </div>
+              <span>⭐ 4.7</span>
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!--/////////  Other Pages  //////////-->
+
+      <section class="page" id="analytics-page">
+        <div class="dummy-page">
+          <h1>Analytics Page</h1>
+        </div>
+      </section>
+
+
+      <section class="page" id="bookings-page">
+        <div class="dummy-page">
+          <h1>Bookings Page</h1>
+        </div>
+      </section>
+
+
+      <section class="page" id="customers-page">
+        <div class="dummy-page">
+          <h1>Customers Page</h1>
+        </div>
+      </section>
+
+
+      <section class="page" id="services-page">
+        <div class="dummy-page">
+          <h1>Services Page</h1>
+        </div>
+      </section>
+
+
+      <section class="page" id="payments-page">
+        <div class="dummy-page">
+          <h1>Payments Page</h1>
+        </div>
+      </section>
+
+
+      <section class="page" id="messages-page">
+        <div class="dummy-page">
+          <h1>Messages Page</h1>
+        </div>
+      </section>
+
+
+      <section class="page" id="employees-page">
+        <div class="dummy-page">
+          <h1>Employees Page</h1>
+        </div>
+      </section>
+
+
+      <section class="page" id="reviews-page">
+        <div class="dummy-page">
+          <h1>Reviews Page</h1>
+        </div>
+      </section>
+
+
+      <section class="page" id="settings-page">
+        <div class="dummy-page">
+          <h1>Settings Page</h1>
+        </div>
+      </section>
+
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
