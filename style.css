@@ -19,6 +19,8 @@ html {
   min-height: 100vh;
 }
 
+/* sidebar design */
+
 .sidebar {
   width: 270px;
   background: #081028;
@@ -47,7 +49,6 @@ html {
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  /* background: linear-gradient(135deg, #5d5fef, #6d3bff); */
   background-color: white;
   display: flex;
   align-items: center;
@@ -56,7 +57,7 @@ html {
   font-weight: 700;
 }
 
-.logo-circle img{
+.logo-circle img {
   width: 100%;
   height: 100%;
 }
@@ -101,41 +102,6 @@ html {
   font-size: 12px;
 }
 
-.premium-box {
-  background: #111c3d;
-  padding: 25px;
-  border-radius: 24px;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.premium-box i {
-  color: #facc15;
-  font-size: 35px;
-  margin-bottom: 15px;
-}
-
-.premium-box h3 {
-  margin-bottom: 10px;
-}
-
-.premium-box p {
-  color: #b3bdd1;
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.premium-box button {
-  width: 100%;
-  border: none;
-  padding: 15px;
-  border-radius: 14px;
-  background: #5d5fef;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-}
-
 .logout {
   margin-top: 30px;
   display: flex;
@@ -144,6 +110,8 @@ html {
   cursor: pointer;
   padding: 16px 18px;
 }
+
+/* main content design */
 
 .main-content {
   margin-left: 270px;
@@ -240,6 +208,8 @@ html {
   font-size: 14px;
 }
 
+/* welcome section design */
+
 .welcome-section {
   display: flex;
   justify-content: space-between;
@@ -259,6 +229,8 @@ html {
   border-radius: 14px;
   cursor: pointer;
 }
+
+/* details cards design */
 
 .cards {
   display: grid;
@@ -317,6 +289,8 @@ html {
 .card span {
   color: #22c55e;
 }
+
+/* charts design */
 
 .charts-grid {
   display: grid;
@@ -395,6 +369,8 @@ html {
   gap: 20px;
 }
 
+/* booking table design */
+
 .table-box {
   scrollbar-width: none;
 }
@@ -446,6 +422,8 @@ html {
   color: #ef4444;
 }
 
+/* employe box design */
+
 .employee {
   display: flex;
   align-items: center;
@@ -472,6 +450,8 @@ html {
   position: relative;
 }
 
+/* notification dropdpwn design */
+
 .notification-dropdown {
   position: absolute;
   top: 60px;
@@ -497,6 +477,8 @@ html {
   color: #9ca3af;
 }
 
+/* sidebar links pages design */
+
 .page {
   display: none;
 }
@@ -516,6 +498,8 @@ body.dark {
   color: white;
 }
 
+/* dark mode design */
+
 body.dark .card,
 body.dark .chart-box,
 body.dark .table-box,
@@ -534,6 +518,8 @@ body.dark .date-btn input {
 body.dark .table-box th {
   background: #111827;
 }
+
+/* responsivenes  */
 
 @media(max-width:1400px) {
 
@@ -562,7 +548,7 @@ body.dark .table-box th {
     left: 0;
   }
 
-  #menu-btn{
+  #menu-btn {
     display: block;
   }
 
@@ -579,7 +565,7 @@ body.dark .table-box th {
     width: 100%;
   }
 
-  .notification-dropdown{
+  .notification-dropdown {
     right: -190px;
   }
 
@@ -628,7 +614,7 @@ body.dark .table-box th {
     font-size: 10px;
   }
 
-  .notify-item{
+  .notify-item {
     position: relative;
   }
 
